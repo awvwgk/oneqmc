@@ -1,0 +1,60 @@
+channels:
+  - conda-forge
+dependencies:
+  # >= 3.10 needed for handling complex typing
+  - python>=3.10
+  - pip
+
+  # force nvcc to be compatible with nvidia driver, update to your specs
+  - conda-forge::cudnn=9.2
+  - nvidia::cuda-nvcc=12.2
+
+  # Pin numpy and scipy to avoid pyscf wheel build timeout
+  - numpy=1.24.3
+  - scipy=1.11.3
+
+  # Non-jax packages
+  - h5py
+  - pyscf
+  - joblib
+  - pyyaml
+  - tqdm
+  - uncertainties
+  - qcelemental>=0.26.0
+
+  # For tests, CI
+  - pytest
+  - black
+  - isort
+
+  # tools for data analysis
+  - pandas
+
+  # optional installs for the notebooks and visuals
+  - jupyter
+  - matplotlib
+  - ase
+  - py3Dmol
+  - colour
+
+  - pip:
+      # jax pywheel repository
+      - --find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+      # JAX, update to match your own CUDA version
+      - jax[cuda12_local]==0.4.34
+
+      # qmc deep learning dependencies
+      - dm-haiku
+      - jaxtyping
+      - jax-dataclasses
+      - kfac-jax
+      - optax
+      - tensorboard
+      - lenses
+
+      # PyTreeNode needed for forward laplacian
+      - flax
+
+      # Forward laplacian framework
+      - git+https://github.com/microsoft/folx.git
