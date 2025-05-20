@@ -47,7 +47,7 @@ Many datasets that are mentioned in the paper are provided in the `data` directo
 The TinyMol dataset can be downloaded from the `deeperwin` repository and 
 processed into our format by running
 ```bash
-python download_tinymol_dataset.py
+python scripts/download_tinymol_dataset.py
 ```
 
 To fine-tune from the LAC checkpoint, use
