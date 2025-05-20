@@ -1,5 +1,5 @@
-import pytest
 import numpy as np
+import pytest
 
 from oneqmc.analysis.h5_io import ffill0
 

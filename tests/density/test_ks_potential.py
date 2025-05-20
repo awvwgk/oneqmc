@@ -5,9 +5,6 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 import pytest
-from oneqmc.geom import norm
-from oneqmc.molecule import Molecule
-from oneqmc.types import MolecularConfiguration
 
 from oneqmc.density_models.analysis import ScoreMatchingDensityModel
 from oneqmc.density_models.operators import (
@@ -16,6 +13,9 @@ from oneqmc.density_models.operators import (
     NumericallyStableKSPotentialOperator,
 )
 from oneqmc.density_models.score_matching import NonSymmetricDensityModel
+from oneqmc.geom import norm
+from oneqmc.molecule import Molecule
+from oneqmc.types import MolecularConfiguration
 
 
 @pytest.fixture

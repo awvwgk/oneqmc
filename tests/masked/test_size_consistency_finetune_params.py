@@ -5,10 +5,10 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 import pytest
-from oneqmc import Molecule
-from oneqmc.types import ModelDimensions
 from jax.experimental import enable_x64
 
+from oneqmc import Molecule
+from oneqmc.types import ModelDimensions
 from oneqmc.wf.orbformer import OrbformerSE
 
 

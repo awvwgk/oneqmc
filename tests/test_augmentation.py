@@ -1,9 +1,9 @@
 import jax
 import jax.numpy as jnp
 import pytest
-from oneqmc.types import MolecularConfiguration, Nuclei
 
 from oneqmc.preprocess.augmentation import RotationAugmentation
+from oneqmc.types import MolecularConfiguration, Nuclei
 
 
 @pytest.fixture

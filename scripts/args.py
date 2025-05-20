@@ -44,7 +44,7 @@ def _add_only_density_and_observable_and_transferable_args(parser):
         "--dataset",
         "-d",
         required=True,
-        help="DATASET should be the name of a subdirectory in data/, containing .yaml files."
+        help="DATASET should be the name of a subdirectory in data/, containing .yaml files.",
     )
     parser.add_argument(
         "--decorr-steps", default=60, type=int, help="Number of sampler decorrelation steps."

@@ -4,6 +4,8 @@ from typing import Any, Iterable, Sequence
 import jax
 import jax.numpy as jnp
 import pytest
+
+from oneqmc.convert_geo import load_molecules
 from oneqmc.data import (
     Batch,
     as_dict_stream,
@@ -14,11 +16,9 @@ from oneqmc.data import (
     simple_batch_loader,
 )
 from oneqmc.molecule import Molecule
+from oneqmc.preprocess.augmentation import Augmentation
 from oneqmc.types import ModelDimensions, ScfParams
 from oneqmc.wf.transferable_hf.hf import HartreeFock
-
-from oneqmc.convert_geo import load_molecules
-from oneqmc.preprocess.augmentation import Augmentation
 
 
 @pytest.fixture

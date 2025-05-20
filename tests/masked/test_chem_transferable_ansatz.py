@@ -6,12 +6,12 @@ import haiku as hk
 import jax
 import jax.numpy as jnp
 import pytest
-from oneqmc.data import (
-    as_dict_stream,
-    as_mol_conf_stream,
-    merge_dicts,
-    simple_batch_loader,
-)
+from jax import grad, random, tree_util
+from jax.experimental import enable_x64
+from lenses import lens
+
+from oneqmc.clip import MedianAbsDeviationClipAndMask
+from oneqmc.data import as_dict_stream, as_mol_conf_stream, merge_dicts, simple_batch_loader
 from oneqmc.loss import make_local_energy_fn, make_loss
 from oneqmc.molecule import Molecule
 from oneqmc.physics import local_energy, loop_laplacian, nuclear_potential
@@ -24,14 +24,9 @@ from oneqmc.types import (
     WavefunctionParams,
     WeightedElectronConfiguration,
 )
-from oneqmc.wf.transferable_hf import HartreeFock
-from jax import grad, random, tree_util
-from jax.experimental import enable_x64
-from lenses import lens
-
-from oneqmc.clip import MedianAbsDeviationClipAndMask
 from oneqmc.wf.envnet import EnvNet
 from oneqmc.wf.orbformer import OrbformerSE
+from oneqmc.wf.transferable_hf import HartreeFock
 
 
 @lru_cache

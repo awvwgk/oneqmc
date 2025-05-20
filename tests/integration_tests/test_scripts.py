@@ -9,7 +9,6 @@ class OneQMCProcessError(Exception):
     pass
 
 
-
 @pytest.fixture(scope="class")
 def project_root():
     return Path(os.path.realpath(os.path.dirname(__file__))) / "../.."

@@ -3,17 +3,17 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 import pytest
-from oneqmc import Molecule
-from oneqmc.device_utils import replicate_on_devices
-from oneqmc.geom import masked_pairwise_distance
-from oneqmc.types import ElectronConfiguration, ModelDimensions, ParallelElectrons, Psi
-from oneqmc.wf.base import WaveFunction
 
+from oneqmc import Molecule
 from oneqmc.density_models.base import DensityModel
 from oneqmc.density_models.score_matching import (
     ScoreMatchingBatchFactory,
     ScoreMatchingDensityTrainer,
 )
+from oneqmc.device_utils import replicate_on_devices
+from oneqmc.geom import masked_pairwise_distance
+from oneqmc.types import ElectronConfiguration, ModelDimensions, ParallelElectrons, Psi
+from oneqmc.wf.base import WaveFunction
 
 
 class HydrogenicWavefunction(WaveFunction):

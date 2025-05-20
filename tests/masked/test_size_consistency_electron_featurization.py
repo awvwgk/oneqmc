@@ -5,6 +5,9 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 import pytest
+from jax import random
+from jax.experimental import enable_x64
+
 from oneqmc import Molecule
 from oneqmc.types import (
     ElectronConfiguration,
@@ -13,9 +16,6 @@ from oneqmc.types import (
     Nuclei,
     ParallelElectrons,
 )
-from jax import random
-from jax.experimental import enable_x64
-
 from oneqmc.wf.orbformer import OrbformerSE
 from oneqmc.wf.orbformer.electrons import ElectronTransformer
 

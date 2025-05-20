@@ -1,7 +1,7 @@
 import jax.numpy as jnp
 import pytest
-from oneqmc.types import Nuclei
 
+from oneqmc.types import Nuclei
 from oneqmc.wf.orbformer.orbitals import generate_spd_orbitals
 
 

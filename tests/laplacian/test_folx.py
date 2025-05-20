@@ -1,10 +1,10 @@
 import jax
 import jax.numpy as jnp
 import numpy as np
-from oneqmc.physics import loop_laplacian
 from jax.experimental import enable_x64
 
 from oneqmc.laplacian.folx_laplacian import ForwardLaplacianOperator
+from oneqmc.physics import loop_laplacian
 
 
 def test_dense_forward_laplacian():
