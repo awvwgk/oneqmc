@@ -23,7 +23,7 @@ cd ./oneqmc
 
 2. Install and activate the provided `conda` environment, which automatically installs JAX
 ```bash
-conda install -f environment-os.yaml -n oneqmc
+conda env create -f environment-os.yaml -n oneqmc
 conda activate oneqmc
 ```
 
