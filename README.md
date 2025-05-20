@@ -52,11 +52,11 @@ python scripts/download_tinymol_dataset.py
 
 To fine-tune from the LAC checkpoint, use
 ```bash
-python scripts/transferable.py -d <subdirectory of ./data> -c checkpoints/lac/lac.chkpt  --discard-sampler-state -n <number of training steps> --mol-batch-size <molecule batch size> --electron-batch-size <electron batch size> -w <output directory>
+python scripts/transferable.py -d <subdirectory of ./data> -c checkpoints/lac/lac.chkpt  --discard-sampler-state -n <number of training steps> -w <output directory>
 ```
 and to train a model from scratch, use
 ```bash
-python scripts/transferable.py -d <subdirectory of ./data> -n <number of training steps> --mol-batch-size <molecule batch size> --electron-batch-size <electron batch size> -w <output directory>
+python scripts/transferable.py -d <subdirectory of ./data> -n <number of training steps> -w <output directory>
 ```
 We recommend using distinct output directories for every training run.
 For other optional arguments, run `python transferable.py -h` for more information.
@@ -76,7 +76,7 @@ with open("./data/<dataset name>/structures.json", "w") as f_out:
 ```
 We also support nested directories as datasets, and dataset names containing `/`.
 
-A legacy `.yaml` file format is also supported for datasets.
+An alternative `.yaml` file format is also supported for datasets.
 
 ### Evaluation of the energy and accessing logged metrics
 
@@ -93,12 +93,14 @@ The saved energies from the evaluation can be accessed via the `h5` file
 from oneqmc.analysis import read_result
 from oneqmc.analysis.energy import robust_mean
 
+# If evaluating on a single GPU, this will have shape [num_mols, num_steps]
 energy = read_result(
     test_output_directory,
     keys=["E_loc/mean_elec"],
     subdir="training",
 )
-rmean = robust_mean(energy).squeeze()
+# Robust mean of energies for structure 0
+rmean_0 = robust_mean(energy[0, :]).squeeze()
 ```
 
 Numerous other metrics are logged during training and evaluation, and be accessed in an analogous way.
