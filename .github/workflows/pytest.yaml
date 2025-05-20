@@ -20,8 +20,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
-      run: |
-        conda env create -f environment-os.yaml -n oneqmc
+      run: conda env create -q -f environment-os.yaml -n oneqmc
     - name: Test with pytest
       run: |
+        export PYTHONPATH=$PYTHONPATH:$PWD/src
         JAX_PLATFORMS=cpu conda run -n oneqmc python -m pytest tests/
