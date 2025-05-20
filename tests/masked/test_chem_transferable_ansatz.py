@@ -451,7 +451,7 @@ class TestChemTransferableAnsatz:
             assert tree_util.tree_reduce(lambda x, y: x and y, allclose_tree, True)
 
     @pytest.mark.skipif(
-        os.getenv("TF_BUILD"),
+        os.getenv("GITHUB_ACTIONS"),
         reason="Skipping slow tests in CI.",
     )
     @pytest.mark.parametrize(
@@ -489,7 +489,7 @@ class TestChemTransferableAnsatz:
             assert tree_util.tree_reduce(lambda x, y: x and y, allclose_tree, True)
 
     @pytest.mark.skipif(
-        os.getenv("TF_BUILD"),
+        os.getenv("GITHUB_ACTIONS"),
         reason="Skipping slow tests in CI.",
     )
     @pytest.mark.parametrize(
@@ -524,7 +524,7 @@ class TestChemTransferableAnsatz:
             assert tree_util.tree_reduce(lambda x, y: x and y, allclose_tree, True)
 
     @pytest.mark.skipif(
-        os.getenv("TF_BUILD"),
+        os.getenv("GITHUB_ACTIONS"),
         reason="Skipping slow tests in CI.",
     )
     @pytest.mark.parametrize(
