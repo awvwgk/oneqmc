@@ -61,7 +61,7 @@ def main(args):
             args.multi_system_sampler != "stack"
         ), "Cannot combine StackSampler with data augmentation"
 
-    # Set input/output directories appropriately for local runs, or running on AML using Amulet
+    # Set input/output directories appropriately for local runs, or running on AML
     workdir = args.workdir or os.environ.get("AMLT_DIRSYNC_DIR", f"runs/{args.dataset}")
     outputdir = args.workdir or os.environ.get("AMLT_OUTPUT_DIR", f"runs/{args.dataset}")
     if is_multihost():
