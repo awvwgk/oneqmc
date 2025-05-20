@@ -34,7 +34,7 @@ export PYTHONPATH=$PYTHONPATH:$PWD/src
 
 4. Test your set-up by running a simple single-point fine-tuning using the LAC checkpoint
 ```bash
-python scripts/transferable.py -d CH4 -c checkpoints/lac.chkpt --discard-sampler-state
+python scripts/transferable.py -d CH4 -c checkpoints/lac/lac.chkpt --discard-sampler-state --max-eq-steps 100
 ```
 
 ## Running Orbformer
@@ -52,7 +52,7 @@ python download_tinymol_dataset.py
 
 To fine-tune from the LAC checkpoint, use
 ```bash
-python scripts/transferable.py -d <subdirectory of ./data> -c checkpoints/lac.chkpt  --discard-sampler-state -n <number of training steps> --mol-batch-size <molecule batch size> --electron-batch-size <electron batch size> -w <output directory>
+python scripts/transferable.py -d <subdirectory of ./data> -c checkpoints/lac/lac.chkpt  --discard-sampler-state -n <number of training steps> --mol-batch-size <molecule batch size> --electron-batch-size <electron batch size> -w <output directory>
 ```
 and to train a model from scratch, use
 ```bash
