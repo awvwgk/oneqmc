@@ -310,7 +310,7 @@ dependencies:
       - dm-tree==0.1.9
       - etils==1.12.2
       - flax==0.10.4
-      - folx==0.2.16
+      - folx==0.2.17
       - fsspec==2025.3.2
       - gast==0.6.0
       - grpcio==1.71.0
