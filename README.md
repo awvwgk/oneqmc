@@ -59,7 +59,7 @@ and to train a model from scratch, use
 python scripts/transferable.py -d <subdirectory of ./data> -n <number of training steps> -w <output directory>
 ```
 We recommend using distinct output directories for every training run.
-For other optional arguments, run `python transferable.py -h` for more information.
+Regarding other optional arguments, run `python scripts/transferable.py -h` for more information.
 
 ### Preparing new structure data for fine-tuning
 
@@ -126,7 +126,7 @@ your own model.
 
 For LAC pretraining Phase 2, we used the following settings, running on 16 GPUs
 ```bash
-python scripts/transferable.py -d lightatomcurriculum/level2 --data-augmentation rotation fuzz --electron-batch-size 1024 --mol-batch-size 16 -n 1000000 --max-restarts 200 --multi-system-sampler double-langevin --repeated-sampling-len 40 --max-eq-steps 300 --metric-logger-period 25 -c <phase 1b checkpoint> --discard-sampler-state  -w <output directory>
+python scripts/transferable.py -d lightatomcurriculum/level2 --data-augmentation rotation fuzz --electron-batch-size 1024 --mol-batch-size 16 -n 400000 --max-restarts 200 --multi-system-sampler double-langevin --repeated-sampling-len 40 --max-eq-steps 300 --metric-logger-period 25 -c <phase 1b checkpoint> --discard-sampler-state  -w <output directory>
 ```
 
 Given an alternative pretraining dataset, you can launch a pretraining by adapting this command. Omit `-c <phase 1b checkpoint> --discard-sampler-state` to begin pretraining
@@ -134,7 +134,7 @@ from a randomly initialized network.
 
 ### Dealing with out-of-memory errors
 
-There are several strategies that can employed for very large molecules that would naively cause OOM errors. 
+There are several strategies that can be employed for very large molecules that would naively cause OOM errors. 
 
 1. Reduce `--electron-batch-size` and set `--mol-batch-size` equal to the number of GPUs.
 1. Passing `--local-energy-chunk-size` will cause the local energy to be evaluated sequentially in blocks of the given size. For example, running with `--electron-batch-size 512 --local-energy-chunk-size 128` will compute local energies in 4 passes.
