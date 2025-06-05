@@ -8,6 +8,9 @@ from oneqmc.molecule import Molecule
 
 if __name__ == "__main__":
     data_dir = os.path.join(os.path.dirname(__file__), os.pardir, "data")
+    reference_energy_dir = os.path.join(
+        os.path.dirname(__file__), os.pardir, "experiment_results", "03_tinymol", "references"
+    )
 
     print("Download data from https://raw.githubusercontent.com/mdsunivie/deeperwin.")
     urllib.request.urlretrieve(
@@ -18,7 +21,12 @@ if __name__ == "__main__":
         "https://raw.githubusercontent.com/mdsunivie/deeperwin/refs/heads/master/datasets/db/datasets.json",
         os.path.join(data_dir, "datasets.json"),
     )
+    urllib.request.urlretrieve(
+        "https://raw.githubusercontent.com/mdsunivie/deeperwin/refs/heads/master/datasets/db/energies.csv",
+        os.path.join(reference_energy_dir, "tinymol_deeperwin.csv"),
+    )
     print("Downloaded.")
+    print(f"DeepErwin baseline results were stored in {reference_energy_dir}/tinymol_deeperwin.csv")
     with open(os.path.join(data_dir, "datasets.json")) as f:
         datasets = json.load(f)
     with open(os.path.join(data_dir, "geometries.json")) as f:
