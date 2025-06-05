@@ -35,7 +35,8 @@ dependencies:
   - matplotlib
   - ase
   - py3Dmol
-  - colour
+  - colour-science
+  - networkx
 
   - pip:
       # jax pywheel repository
@@ -48,7 +49,7 @@ dependencies:
       - dm-haiku
       - jaxtyping
       - jax-dataclasses
-      - kfac-jax
+      - kfac-jax==0.0.6
       - optax
       - tensorboard
       - lenses
