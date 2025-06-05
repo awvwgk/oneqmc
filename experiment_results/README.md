@@ -1,24 +1,32 @@
-NOTE all the readmes will be merged to one as sections later. WIP, will need to update the contents
-This folder contains the results covered in the main text and supporting information. Each subfolder for each exeperiment of the paper with an appearance order:
-    - `01_diels-alder`: - `molecule_images` contains the images of the structures, and `processed_data.csv` contains the energies reported in Figure X.  
-                        - `processed_data.csv` contains the energies obtained using Orbformer either while training from scratch or finetuning from a pretrained checkpoint
-    - `02_bbmep`: - `molecule_images`: contains images of 20 structures on the five MEPs
-		  - `BBMEP_orbformer_energy.csv` contains the energies obtained using different deep QMC ansatz training from scratch or finetuning from a pretrained checkpoint 
-	          - `BBMEP_reference_energy.csv` contains the reference energies generated with large batch size using deep QMC
-		  - `BBMEP_es_energy.csv` summarizes the results computed using variaous traitional electronic structure methods.   
-    - `03_tinymol`: - `molecule_images` contains a representative image of each unique test molecule
-                    - `processed_data.csv` contains the energies obtained using various deep QMC approaches
-                    - `tinymol_deeperwin.csv` baseline, containes the energies of Scherbela et al. (doi: 10.1038/s41467-023-44216-9), can be downloaded with the script `scripts/download_tinymol_dataset.py`
-                    - `tinymol_gao.csv` baseline, contains energies of Gao et al. (doi: 10.48550/arXiv.2405.14762), data acquired through private conversation
-    - `04_licn`: - `energy.csv` contains the energies obtained using Orbformer pretrained on different datasets
-                 - `licn-molecule.png` is an image of the LiCN molecule
-    - `05_alkane_scalability`: - `ccsdt_results.csv` contains complete basis set extrapolated CCSD(T) reference energies for the alkane chains
-                               - `energy.csv` contains Orbformer energies for the same alkanes, after finetuning
-                               - `finetune_params.npz` contains the parameters of the Orbformer model, jointly finetuned on the above alkane chains
-                               - `slaters.npz` contains the various Slater matrices and their gradients produced by the finetuned Orbformer model for heptane and octane
-    - `06_si_n2_ethene`: - `processed.csv` contains Orbformer and baseline (doi: 10.48550/arXiv.2405.14762) energies for the N2 dissociation curve.
-    - `07_si_bse49_end_point_reference`: `BSE49_Ediss_lit_energy_compare.csv` contains the energy summary for the end point evaluations using high quality Orbformer.
-    - `08_si_ablations`: - `det_penalty/energy.npz` contains the training energies of various Orbformer and Psiformer configurations with/without the determinant penalty, using one or sixteen determinants.
-                         - `langevin/mala.npz` contains the sampling statistics collected throughout burning in the MALA sampler
-                         - `langevin/ula_mala.npz` contains the sampling statistics collected throughout burning in the combined ULA + MALA sampler
+This folder contains the processed results covered in the main text and supporting information.
+
+- `01_diels-alder`
+    - `molecule_images` contains the images of the structures, and `processed_data.csv` contains the energies reported in Figure X.  
+    - `processed_data.csv` contains the energies obtained using Orbformer either while training from scratch or finetuning from a pretrained checkpoint
+- `02_bbmep`
+    - `molecule_images`: contains images of 20 structures on the five MEPs
+    - `BBMEP_orbformer_energy.csv` contains the energies obtained using different deep QMC ansatz training from scratch or finetuning from a pretrained checkpoint 
+    - `BBMEP_reference_energy.csv` contains the reference energies generated with large batch size using deep QMC
+    - `BBMEP_es_energy.csv` summarizes the results computed using variaous traitional electronic structure methods.   
+- `03_tinymol`
+    - `molecule_images` contains a representative image of each unique test molecule
+    - `processed_data.csv` contains the energies obtained using various deep QMC approaches
+    - `tinymol_deeperwin.csv` baseline, containes the energies of Scherbela et al. (doi: 10.1038/s41467-023-44216-9), can be downloaded with the script `scripts/download_tinymol_dataset.py`
+    - `tinymol_gao.csv` baseline, contains energies of Gao et al. (doi: 10.48550/arXiv.2405.14762), data acquired through private conversation
+- `04_licn`
+    - `energy.csv` contains the energies obtained using Orbformer pretrained on different datasets
+    - `licn-molecule.png` is an image of the LiCN molecule
+- `05_alkane_scalability`
+    - `ccsdt_results.csv` contains complete basis set extrapolated CCSD(T) reference energies for the alkane chains
+    - `energy.csv` contains Orbformer energies for the same alkanes, after finetuning
+    - `finetune_params.npz` contains the parameters of the Orbformer model, jointly finetuned on the above alkane chains
+    - `slaters.npz` contains the various Slater matrices and their gradients produced by the finetuned Orbformer model for heptane and octane
+- `06_si_n2_ethene`
+    - `processed.csv` contains Orbformer and baseline (doi: 10.48550/arXiv.2405.14762) energies for the N2 dissociation curve.
+- `07_si_bse49_end_point_reference`
+    - `BSE49_Ediss_lit_energy_compare.csv` contains the energy summary for the end point evaluations using high quality Orbformer.
+- `08_si_ablations`
+    - `det_penalty/energy.npz` contains the training energies of various Orbformer and Psiformer configurations with/without the determinant penalty, using one or sixteen determinants.
+    - `langevin/mala.npz` contains the sampling statistics collected throughout burning in the MALA sampler
+    - `langevin/ula_mala.npz` contains the sampling statistics collected throughout burning in the combined ULA + MALA sampler
 
