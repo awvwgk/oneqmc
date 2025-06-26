@@ -16,7 +16,7 @@ Orbformer is a model developed by the OneQMC team. It is a chemically transferab
 <!-- Provide the basic links for the model. -->
 
 - **Repository:** https://github.com/microsoft/oneqmc
-- **Papers:** Orbformer wave function foundation model, [Electron density extraction](https://arxiv.org/pdf/2409.01306)
+- **Papers:** [Orbformer wave function foundation model](https://arxiv.org/abs/2506.19960), [Electron density extraction](https://arxiv.org/pdf/2409.01306)
 
 ## Uses
 
@@ -157,7 +157,12 @@ MIT
 If you use this repository, please consider citing our work.
 The Orbformer model, checkpoints, training scheme:
 ```bibtex
-@article{ main paper }
+@article{foster2025ab,
+  title={An ab initio foundation model of wavefunctions that accurately describes chemical bond breaking},
+  author={Adam Foster and Zeno Sch{\"a}tzle and P. Bern{\'a}t Szab{\'o} and Lixue Cheng and Jonas K{\"o}hler and Gino Cassella and Nicholas Gao and Jiawei Li and Frank No{\'e} and Jan Hermann},
+  journal={arXiv preprint arXiv:2506.19960},
+  year={2025}
+}
 ```
 Density extraction
 ```bibtex
