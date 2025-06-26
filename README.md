@@ -2,7 +2,7 @@
 
 # OneQMC
 
-This package provides an implementation of the Orbformer wave function foundation model.
+This package provides an implementation of the [Orbformer wave function foundation model](https://arxiv.org/abs/2506.19960).
 
 We also provide the following:
 - the [Neural Electron Real-space Density](https://arxiv.org/abs/2409.01306) model, which can be trained from Orbformer checkpoints
@@ -162,7 +162,12 @@ The training code will automatically evaluate the density on Lebedev-Laikov grid
 If you use this repository, please cite our work.
 The Orbformer model, checkpoints, training scheme:
 ```bibtex
-@article{ main paper }
+@article{foster2025ab,
+  title={An ab initio foundation model of wavefunctions that accurately describes chemical bond breaking},
+  author={Adam Foster and Zeno Sch{\"a}tzle and P. Bern{\'a}t Szab{\'o} and Lixue Cheng and Jonas K{\"o}hler and Gino Cassella and Nicholas Gao and Jiawei Li and Frank No{\'e} and Jan Hermann},
+  journal={arXiv preprint arXiv:2506.19960},
+  year={2025}
+}
 ```
 Electron density extraction:
 ```bibtex
