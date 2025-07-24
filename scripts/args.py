@@ -110,12 +110,6 @@ def _add_only_density_and_observable_and_transferable_args(parser):
         help="Propose exchanges of opposite spin electrons as MCMC updates.",
     )
     parser.add_argument(
-        "--mcmc-pruning",
-        default=True,
-        action=argparse.BooleanOptionalAction,
-        help="Prune MCMC samples with very low log(Psi) values.",
-    )
-    parser.add_argument(
         "--metric-logger",
         nargs="*",
         choices=["tb", "h5"],
@@ -223,6 +217,12 @@ def _add_only_observable_and_transferable_args(parser):
         help="Run a single molecule dataset over multiple GPUs. Usage: set the mol-batch-size equal to the "
         "number of GPUs and select a dataset with exactly one molecule.",
     )
+    parser.add_argument(
+        "--mcmc-pruning",
+        default=True,
+        action=argparse.BooleanOptionalAction,
+        help="Prune MCMC samples with very low log(Psi) values.",
+    )
 
 
 def _add_only_density_args(parser):
@@ -253,6 +253,12 @@ def _add_only_density_args(parser):
         choices=["non-symmetric", "radial"],
         default="non-symmetric",
         help="The submodel of score matching density model to fit.",
+    )
+    parser.add_argument(
+        "--mcmc-pruning",
+        default=False,
+        action=argparse.BooleanOptionalAction,
+        help="Prune MCMC samples with very low log(Psi) values.",
     )
 
 
