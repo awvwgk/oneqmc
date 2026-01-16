@@ -18,6 +18,10 @@ log = logging.getLogger(__name__)
 
 
 def load_chkpt_file(chkpt: str, discard_sampler_state: bool) -> Tuple[TrainState, int]:
+    if not os.environ["ORBFORMER_PICKLE_LOADING"] == "1":
+        raise PermissionError(
+            "Loading pickle files is disabled for security. Set ORBFORMER_PICKLE_LOADING=1 to allow"
+        )
     with open(chkpt, "rb") as chkpt_file:
         init_step, (smpl_state, param_state, opt_state) = pickle.load(chkpt_file)
         if discard_sampler_state:
@@ -28,6 +32,10 @@ def load_chkpt_file(chkpt: str, discard_sampler_state: bool) -> Tuple[TrainState
 
 
 def load_density_chkpt_file(chkpt: str, discard_sampler_state: bool) -> Tuple[Tuple, int]:
+    if not os.environ["ORBFORMER_PICKLE_LOADING"] == "1":
+        raise PermissionError(
+            "Loading pickle files is disabled for security. Set ORBFORMER_PICKLE_LOADING=1 to allow"
+        )
     with open(chkpt, "rb") as chkpt_file:
         init_step, (param_state, opt_state) = pickle.load(chkpt_file)
     return (param_state, opt_state), init_step
