@@ -135,7 +135,7 @@ class CheckpointStore:
         while self.fast_chkpts:
             if not os.environ["ORBFORMER_PICKLE_LOADING"] == "1":
                 raise PermissionError(
-                    "Loading pickle files is disable for security. Set ORBFORMER_PICKLE_LOADING=1 to allow"
+                    "Loading pickle files is disabled for security. Set ORBFORMER_PICKLE_LOADING=1 to allow"
                 )
             with self.fast_chkpts.pop(-1).path.open("rb") as f:
                 step_fast, last_chkpt_fast = pickle.load(f)
@@ -148,7 +148,7 @@ class CheckpointStore:
         while self.slow_chkpts:
             if not os.environ["ORBFORMER_PICKLE_LOADING"] == "1":
                 raise PermissionError(
-                    "Loading pickle files is disable for security. Set ORBFORMER_PICKLE_LOADING=1 to allow"
+                    "Loading pickle files is disabled for security. Set ORBFORMER_PICKLE_LOADING=1 to allow"
                 )
             with self.slow_chkpts.pop(-1).path.open("rb") as f:
                 step_slow, last_chkpt_slow = pickle.load(f)
