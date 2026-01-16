@@ -1,5 +1,7 @@
 ![header](envelope.png)
 
+**Warning: Orbformer checkpoints are stored using `pickle`. Never read a checkpoint from an untrusted source.**
+
 # OneQMC
 
 This package provides an implementation of the [Orbformer wave function foundation model](https://arxiv.org/abs/2506.19960).
@@ -60,6 +62,9 @@ python scripts/transferable.py -d <subdirectory of ./data> -n <number of trainin
 ```
 We recommend using distinct output directories for every training run.
 Regarding other optional arguments, run `python scripts/transferable.py -h` for more information.
+
+**Note**: Checkpoints are stored using `pickle`. This means that opening a checkpoint from an untrusted source is a major security risk. Only ever open checkpoint files from trusted sources. To prevent reading untrusted pickle files, checkpoint reading is disabled by default and can be
+re-enabled by settings the environment variables `ORBFORMER_PICKLE_LOADING=1`.
 
 ### Preparing new structure data for fine-tuning
 
