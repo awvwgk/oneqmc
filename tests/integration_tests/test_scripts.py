@@ -52,7 +52,7 @@ def run_transferable_script(project_root):
             ],
             cwd=project_root,
             capture_output=True,
-            env={"ORBFORMER_PICKLE_LOADING": "1"}
+            env={"ORBFORMER_PICKLE_LOADING": "1"},
         )
         if result.returncode != 0:
             raise OneQMCProcessError(result.stderr.decode())
@@ -91,7 +91,7 @@ def run_density_script(project_root):
             ],
             cwd=project_root,
             capture_output=True,
-            env={"ORBFORMER_PICKLE_LOADING": "1"}
+            env={"ORBFORMER_PICKLE_LOADING": "1"},
         )
         if result.returncode != 0:
             raise OneQMCProcessError(result.stderr.decode())
