@@ -28,6 +28,7 @@ cd ./oneqmc
 conda env create -f environment-os.yaml -n oneqmc
 conda activate oneqmc
 ```
+This should take several minutes.
 
 3. Append the location of the `oneqmc` source files to your `PYTHONPATH`
 ```bash
@@ -38,6 +39,7 @@ export PYTHONPATH=$PYTHONPATH:$PWD/src
 ```bash
 python scripts/transferable.py -d CH4 -c checkpoints/lac/lac.chkpt --discard-sampler-state --max-eq-steps 100
 ```
+This could take several minutes to start, and can run for several hours or until killed.
 
 ## Running Orbformer
 
