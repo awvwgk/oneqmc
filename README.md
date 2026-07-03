@@ -4,6 +4,8 @@
 
 # OneQMC
 
+[![DOI](https://zenodo.org/badge/936735765.svg)](https://doi.org/10.5281/zenodo.21160149)
+
 This package provides an implementation of the [Orbformer wave function foundation model](https://arxiv.org/abs/2506.19960).
 
 We also provide the following:
