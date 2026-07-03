@@ -15,10 +15,18 @@ authors:
     given-names: P. Bernát
   - family-names: Cheng
     given-names: Lixue
-  - family-names: Hermann
-    given-names: Jan
+  - family-names: Köhler
+    given-names: Jonas
+  - family-names: Cassella
+    given-names: Gino
+  - family-names: Gao
+    given-names: Nicholas
+  - family-names: Li
+    given-names: Jiawei
   - family-names: Noé
     given-names: Frank
+  - family-names: Hermann
+    given-names: Jan
 
 repository-code: https://github.com/microsoft/oneqmc
 
